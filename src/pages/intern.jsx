@@ -149,7 +149,7 @@ function Intern() {
 
               <motion.p
                 variants={fadeLeft}
-                className="mt-5 max-w-md text-xs leading-6 text-gray-600"
+                className="mt-5 max-w-md text-sm leading-6 text-gray-600"
               >
                 Join our team and work on real products, solve real problems,
                 and learn alongside people who are building things that matter.
@@ -157,7 +157,7 @@ function Intern() {
 
               <motion.p
                 variants={fadeLeft}
-                className="mt-5 max-w-md text-xs leading-6 text-gray-600"
+                className="mt-5 max-w-md text-sm leading-6 text-gray-600"
               >
                 We are looking for curious people who are willing to learn,
                 contribute, and take ownership of their work.
@@ -166,13 +166,13 @@ function Intern() {
               {/* WHAT YOU WILL DO */}
 
               <motion.div variants={fadeUp} className="mt-7">
-                <h2 className="text-[10px] font-medium uppercase text-[#163527]">
+                <h2 className="text-[20px] font-medium uppercase text-[#163527]">
                   What you will do
                 </h2>
 
                 <motion.ul
                   variants={formContainer}
-                  className="mt-3 space-y-2 text-xs text-gray-600"
+                  className="mt-3 space-y-2 text-sm text-gray-600"
                 >
                   <motion.li variants={listAnimation}>
                     • Work on real projects with the team

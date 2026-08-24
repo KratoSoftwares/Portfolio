@@ -117,7 +117,7 @@ function Contact() {
 
               <motion.span
                 variants={fadeLeft}
-                className="w-fit border-b border-black pb-1 text-[10px] font-medium uppercase tracking-wide text-[#163527]"
+                className="w-fit border-b border-black pb-1 text-[15px] font-medium uppercase tracking-wide text-[#163527]"
               >
                 Contact Us
               </motion.span>
@@ -135,7 +135,7 @@ function Contact() {
 
               <motion.p
                 variants={fadeLeft}
-                className="mt-5 max-w-md text-xs leading-6 text-gray-600"
+                className="mt-5 max-w-md text-sm leading-6 text-gray-600"
               >
                 A paragraph is enough to start. If it is a fit, we will send a
                 short read of the problem, a rough shape of the work and
@@ -148,11 +148,11 @@ function Contact() {
                 variants={fadeUp}
                 className="mt-7 flex flex-col gap-1"
               >
-                <h5 className="text-[10px] font-medium uppercase tracking-wide text-gray-600">
+                <h5 className="text-[20px] font-medium uppercase tracking-wide text-gray-600">
                   Email
                 </h5>
 
-                <span className="text-xs text-gray-600">
+                <span className="text-sm text-gray-600">
                   teamname@gmail.com
                 </span>
               </motion.div>
@@ -163,11 +163,11 @@ function Contact() {
                 variants={fadeUp}
                 className="mt-7 flex flex-col gap-1"
               >
-                <h5 className="text-[10px] font-medium uppercase tracking-wide text-gray-600">
+                <h5 className="text-[20px] font-medium uppercase tracking-wide text-gray-600">
                   Availability
                 </h5>
 
-                <span className="text-xs text-gray-600">
+                <span className="text-sm text-gray-600">
                   Taking one new project this quarter
                 </span>
               </motion.div>

@@ -97,13 +97,13 @@ function Projects() {
 
                 {/* DESCRIPTION */}
 
-                <p className="mt-2 max-w-md text-xs leading-5 text-gray-500">
+                <p className="mt-2 max-w-md text-sm leading-5 text-gray-500">
                   {project.description}
                 </p>
 
                 {/* TYPE + YEAR */}
 
-                <div className="mt-5 flex max-w-md items-center justify-between text-[9px] text-gray-500">
+                <div className="mt-5 flex max-w-md items-center justify-between text-[15px] text-gray-500">
                   <span>{project.type}</span>
                   <span>{project.year}</span>
                 </div>

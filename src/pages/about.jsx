@@ -155,7 +155,7 @@ function About() {
             >
               <motion.p
                 variants={fadeUp}
-                className="max-w-xl text-xs font-medium leading-6 text-[#163527]"
+                className="max-w-xl text-sm font-medium leading-6 text-[#163527]"
               >
                 We formed around a single stubborn belief: most software fails
                 for want of clear thinking; not clear engineering.
@@ -163,7 +163,7 @@ function About() {
 
               <motion.p
                 variants={fadeUp}
-                className="mt-7 max-w-xl text-xs leading-6 text-gray-700"
+                className="mt-7 max-w-xl text-sm leading-6 text-gray-700"
               >
                 KOVA is a mobile bookkeeping and VAT compliance app built for
                 Nigerian small business owners to record sales and expenses,
@@ -172,7 +172,7 @@ function About() {
 
               <motion.p
                 variants={fadeUp}
-                className="mt-7 max-w-xl text-xs leading-6 text-gray-700"
+                className="mt-7 max-w-xl text-sm leading-6 text-gray-700"
               >
                 KOVA is a mobile bookkeeping and VAT compliance app built for
                 Nigerian small business owners to record sales and expenses,
@@ -193,7 +193,7 @@ function About() {
             >
               <motion.p
                 variants={fadeUp}
-                className="text-[10px] font-medium uppercase text-gray-600"
+                className="text-[20px] font-medium uppercase text-gray-600"
               >
                 Discipline In-House
               </motion.p>
@@ -212,7 +212,7 @@ function About() {
                       y: -2,
                       scale: 1.03,
                     }}
-                    className="cursor-default rounded-full border border-[#b8c7bd] px-3 py-1.5 text-[10px] font-medium text-[#163527]"
+                    className="cursor-default rounded-full border border-[#b8c7bd] px-3 py-1.5 text-[12px] font-medium text-[#163527]"
                   >
                     {discipline}
                   </motion.span>
@@ -238,7 +238,7 @@ function About() {
                       {stat.number}
                     </p>
 
-                    <p className="mt-1 text-[10px] text-gray-500">
+                    <p className="mt-1 text-[12px] text-gray-500">
                       {stat.label}
                     </p>
                   </motion.div>
@@ -263,7 +263,7 @@ function About() {
           >
             <motion.h2
               variants={fadeUp}
-              className="text-[10px] font-bold uppercase text-[#163527]"
+              className="text-[20px] font-bold uppercase text-[#163527]"
             >
               How We Work
             </motion.h2>
@@ -281,15 +281,15 @@ function About() {
                   }}
                   className="cursor-default"
                 >
-                  <p className="text-[10px] text-gray-500">
+                  <p className="text-[12px] text-gray-500">
                     {item.number}
                   </p>
 
-                  <h3 className="mt-1 text-xs font-medium text-[#163527]">
+                  <h3 className="mt-1 text-sm font-medium text-[#163527]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2 text-[10px] leading-5 text-gray-500">
+                  <p className="mt-2 text-[15px] leading-5 text-gray-500">
                     {item.text}
                   </p>
                 </motion.article>

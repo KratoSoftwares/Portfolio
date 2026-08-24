@@ -14,8 +14,8 @@ function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#163527] text-white">
-      <nav className="mx-auto flex h-12 w-full max-w-6xl items-center justify-between px-5 py-2 sm:px-3 sm:py-2">
+    <header className="sticky top-0 px-2 z-50 bg-[#163527] text-white">
+      <nav className="mx-auto flex h-12 w-full  items-center justify-between px-5 py-2 sm:px-3 sm:py-2">
         <Link to="/" className="text-lg font-extrabold tracking-tight">
           Kratos<span className="text-[#f2a93b]">.</span>
         </Link>
@@ -26,7 +26,7 @@ function Navbar() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `text-xs font-medium transition-colors ${
+                `text-sm font-medium transition-colors ${
                   
                   isActive ? "text-[#f2a93b]" : "text-white/75 hover:text-white"
 

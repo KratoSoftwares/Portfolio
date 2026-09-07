@@ -4,56 +4,22 @@ import { motion } from "framer-motion";
 import { fadeUp } from "../animations/variants";
 
 function About() {
-  const disciplines = [
-    "Product Manager",
-    "Data Scientist",
-    "Digital Marketer",
-    "Front End Developers",
-    "Mobile Developer",
-    "Cybersecurity Analyst",
-    "Product Designers",
-    "Back End Developers",
-  ];
-
-  const stats = [
+  const values = [
     {
-      number: "9",
-      label: "People on the team",
+      name: "ship fast",
+      desc: "Brief to working build in weeks, not quarters",
     },
     {
-      number: "12",
-      label: "Projects delivered",
+      name: "build secure",
+      desc: "Security and QA at every stage, not an afterthought",
     },
     {
-      number: "2",
-      label: "Live projects at a time",
+      name: "teach well",
+      desc: "interns leave with real, shipped work behind them",
     },
     {
-      number: "4",
-      label: "Years working together",
-    },
-  ];
-
-  const process = [
-    {
-      number: "01",
-      title: "Frame the problem",
-      text: "We start with the constraint, not the feature list. A week of interviews, workflow mapping and a written brief everyone signs on.",
-    },
-    {
-      number: "02",
-      title: "Design in the open",
-      text: "Low fidelity first, to mid fidelity, then high fidelity screens in a shared file. You see the work as it forms, not at a reveal.",
-    },
-    {
-      number: "03",
-      title: "Build in slices",
-      text: "Vertical slices shipped weekly to a staging build, so the thing is real and testable long before launch.",
-    },
-    {
-      number: "04",
-      title: "Hand over property",
-      text: "Documentation, analytics, and a support window. We would rather you own it than depend on us.",
+      name: "own the outcome",
+      desc: "we stay accountable to results, not just delivery",
     },
   ];
 
@@ -70,40 +36,8 @@ function About() {
     },
   };
 
-  const pillAnimation = {
-    hidden: {
-      opacity: 0,
-      scale: 0.9,
-      y: 10,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.35,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const statAnimation = {
-    hidden: {
-      opacity: 0,
-      y: 15,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden ">
       <Navbar />
 
       {/* =========================
@@ -111,26 +45,30 @@ function About() {
       ========================== */}
 
       <motion.section
-        className="bg-[#163527] text-white"
+        className="bg-[#163527] text-white "
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
       >
-        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-6 sm:py-14">
+        <div className=" mx-auto w-full max-w-6xl flex flex-col gap-2 px-5 py-10 sm:px-6 sm:py-14 items-start">
           <motion.span
             variants={fadeUp}
-            className="inline-flex border-b border-[#f2a93b] pb-1 text-[10px] font-medium uppercase tracking-wide text-white/80"
+            className="inline-flex border-b-2 border-[#f2b632] pb-1 text-[20px] font-medium uppercase tracking-wider text-[#f2b632]"
           >
-            About Team Name
+            who we are
           </motion.span>
 
           <motion.h1
             variants={fadeUp}
-            className="mt-5 max-w-2xl text-3xl font-normal leading-tight tracking-tight sm:text-4xl md:text-5xl"
+            className="mt-5 max-w-2xl text-2xl font-normal leading-tight tracking-tight sm:text-4xl md:text-4xl"
           >
-            Nine people who would rather build one useful thing than pitch ten
-            clever ones.
+            Human-centered technology, built in Lagos
           </motion.h1>
+          <p className="text-sm font-medium mt-2 w-full text-[#f8f7ee] max-w-2xl leading-8">
+            Kratos software technologies designs and delivers SaaS products and
+            custom software to businesses across Africa, while training the next
+            generation of tech talents along the way
+          </p>
         </div>
       </motion.section>
 
@@ -138,10 +76,9 @@ function About() {
           ABOUT CONTENT
       ========================== */}
 
-      <main className="bg-[#f8f9f9]">
-        <section className="mx-auto w-full max-w-6xl px-5 py-8 sm:px-6 sm:py-10">
+      <main className="bg-[#faf8f3]">
+        <section className="mx-auto  w-full max-w-6xl px-5 py-8 sm:px-6 sm:py-10">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.25fr_0.9fr] md:gap-12">
-
             {/* LEFT SIDE */}
 
             <motion.div
@@ -149,154 +86,134 @@ function About() {
               whileInView="visible"
               viewport={{
                 once: true,
-                amount: 0.2,
+                amount: 0.15,
               }}
               variants={staggerContainer}
             >
               <motion.p
                 variants={fadeUp}
-                className="max-w-xl text-sm font-medium leading-6 text-[#163527]"
+                className="max-w-fit text-[20px] font-medium leading-6 uppercase text-[#0d2213] border-b-2 border-b-[#f2b632]"
               >
-                We formed around a single stubborn belief: most software fails
-                for want of clear thinking; not clear engineering.
+                why we started
               </motion.p>
 
               <motion.p
                 variants={fadeUp}
-                className="mt-7 max-w-xl text-sm leading-6 text-gray-700"
+                className="mt-7 max-w-xl text-sm leading-8 text-[#0d2213]"
               >
-                KOVA is a mobile bookkeeping and VAT compliance app built for
-                Nigerian small business owners to record sales and expenses,
-                track inventory, monitor debts and see their profit.
+                Kratos software technologies designs and delivers SaaS products
+                and custom software to businesses across Africa,starting with
+                Nigerian small business owners. Alongside the products we've
+                build,we run structured internship programs that train
+                developers into industry ready professionals because we believe
+                good software and good people are built the same way:through
+                real problems,hands-on work and ownership of the outcome
               </motion.p>
-
-              <motion.p
-                variants={fadeUp}
-                className="mt-7 max-w-xl text-sm leading-6 text-gray-700"
-              >
-                KOVA is a mobile bookkeeping and VAT compliance app built for
-                Nigerian small business owners to record sales and expenses,
-                track inventory, monitor debts and see their profit.
-              </motion.p>
-            </motion.div>
-
-            {/* RIGHT SIDE */}
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              variants={staggerContainer}
-            >
-              <motion.p
-                variants={fadeUp}
-                className="text-[20px] font-medium uppercase text-gray-600"
-              >
-                Discipline In-House
-              </motion.p>
-
-              {/* DISCIPLINES */}
-
-              <motion.div
-                variants={staggerContainer}
-                className="mt-2 flex flex-wrap gap-2"
-              >
-                {disciplines.map((discipline) => (
-                  <motion.span
-                    key={discipline}
-                    variants={pillAnimation}
-                    whileHover={{
-                      y: -2,
-                      scale: 1.03,
-                    }}
-                    className="cursor-default rounded-full border border-[#b8c7bd] px-3 py-1.5 text-[12px] font-medium text-[#163527]"
-                  >
-                    {discipline}
-                  </motion.span>
-                ))}
-              </motion.div>
-
-              {/* STATS */}
-
-              <motion.div
-                variants={staggerContainer}
-                className="mt-8 grid grid-cols-2 gap-x-8 gap-y-7"
-              >
-                {stats.map((stat) => (
-                  <motion.div
-                    key={stat.label}
-                    variants={statAnimation}
-                    whileHover={{
-                      y: -3,
-                    }}
-                    className="cursor-default"
-                  >
-                    <p className="text-2xl font-medium leading-none text-[#163527]">
-                      {stat.number}
-                    </p>
-
-                    <p className="mt-1 text-[12px] text-gray-500">
-                      {stat.label}
-                    </p>
-                  </motion.div>
-                ))}
-              </motion.div>
             </motion.div>
           </div>
+        </section>
 
-          {/* =========================
-              HOW WE WORK
+
+        {/* =========================
+              vision and mission
           ========================== */}
 
-          <motion.section
-            className="mt-10 border-t border-gray-300 pt-7"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            variants={staggerContainer}
+        <motion.section
+          className="mt-10 flex flex-col md:flex-row py-6 px-5 sm:px-6 md:py-12 gap-6 border-t bg-[#163527]  justify-center items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          variants={staggerContainer}
+        >
+          <motion.div
+            variants={fadeUp}
+            className="cursor-default rounded-2xl shadow-sm bg-[#faf8f3] px-4 py-7 w-full max-w-xs min-h-40"
           >
-            <motion.h2
-              variants={fadeUp}
-              className="text-[20px] font-bold uppercase text-[#163527]"
-            >
-              How We Work
-            </motion.h2>
+            <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#163527] text-2xl font-medium text-[#163527]">
+              our vision
+            </h3>
 
-            <motion.div
-              variants={staggerContainer}
-              className="mt-5 grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-4 md:gap-6"
-            >
-              {process.map((item) => (
-                <motion.article
-                  key={item.number}
-                  variants={fadeUp}
-                  whileHover={{
-                    y: -4,
-                  }}
-                  className="cursor-default"
-                >
-                  <p className="text-[12px] text-gray-500">
-                    {item.number}
-                  </p>
+            <p className="mt-2 text-sm leading-6  text-[#0d2213]">
+              Human-centered technology that solves problems and scales
+              businesses across Africa
+            </p>
+          </motion.div>
+          <motion.div
+            variants={fadeUp}
+            className="cursor-default shadow-sm rounded-2xl bg-[#faf8f3] px-4 py-7 w-full max-w-xs min-h-40"
+          >
+            <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#163527] text-2xl font-medium text-[#163527]">
+              our mission
+            </h3>
 
-                  <h3 className="mt-1 text-sm font-medium text-[#163527]">
-                    {item.title}
-                  </h3>
+            <p className="mt-2 text-sm leading-6 text-[#0d2213]">
+              Human-centered technology that solves problems and scales
+              businesses across Africa
+            </p>
+          </motion.div>
+        </motion.section>
 
-                  <p className="mt-2 text-[15px] leading-5 text-gray-500">
-                    {item.text}
-                  </p>
-                </motion.article>
-              ))}
-            </motion.div>
-          </motion.section>
-        </section>
+        {/*====================
+          Values
+          =====================*/}
+
+        <motion.section className="mx-auto  w-full max-w-6xl px-5 py-8 sm:px-6 sm:py-10" initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          variants={staggerContainer}>
+          <motion.p
+            variants={fadeUp}
+            className="max-w-fit text-[20px] mb-4 font-medium leading-6 uppercase text-[#0d2213] border-b-2 border-b-[#f2b632]"
+          >
+            our values
+          </motion.p>
+          <div className="mx-auto w-full max-w-4xl  px-6 py-8 md:px-12 md:py-14 grid grid-cols-1 md:grid-cols-2  gap-6 justify-items-center">
+            {values.map((value) => (
+              <motion.div
+                key={value.name}
+                variants={fadeUp}
+                className="bg-white rounded-2xl shadow-sm w-full max-w-xs min-h-32 px-4 py-7 flex flex-col justify-center"
+              >
+                <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#163527] text-[#163527] text-2xl capitalize font-medium">{value.name}</h3>
+                <p className="mt-2 text-[#0d2213]">{value.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/*=====================
+          The Team
+          ======================*/}
+          <section className="w-full bg-[#163527] ">
+          <motion.div
+          className="mx-auto  w-full max-w-6xl  px-5 py-8 sm:px-6 sm:py-10" initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          variants={staggerContainer}>
+          <div className="mx-auto w-full flex mb-2.5 flex-row justify-between items-center">
+           <span className="text-[#f8f7ee] border-b border-b-[#f2b632] font-medium uppercase">The Team</span>
+           <span className="text-sm text-[#f8f7ee] border-b border-b-[#f2b632]">meet the full team</span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
+            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
+            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
+            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
+            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
+          </div>
+          </motion.div>
+          </section>
+
       </main>
 
       {/* =========================

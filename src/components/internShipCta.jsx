@@ -1,41 +1,31 @@
 function IntershipCTA() {
   return (
-    <section className="bg-white py-8 sm:py-12">
-      <div className="mx-auto w-full max-w-4xl px-5 sm:px-6">
+    <section className="bg-white py-10 sm:py-14">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
+        <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#163527]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#f2a93b]" />
+          Internship
+        </span>
 
-        <div className="relative overflow-hidden rounded-2xl bg-[#163527] px-6 py-10 text-center shadow-md sm:px-8">
-
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              background:
-                "radial-gradient(500px circle at 100% 0%, rgba(242,169,59,0.25), transparent 70%)",
-            }}
-            aria-hidden
-          />
-
-          <div className="relative">
-
-            <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-              Collaborate With Us{" "}
-              <span className="text-[#f2a93b]">•</span>{" "}
-              Internship
+        <div className="mt-5 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
+          <div className="sm:w-1/2">
+            <h2 className="text-2xl font-bold tracking-tight text-[#163527] sm:text-3xl">
+              Collaborate with us, or train with us.
             </h2>
 
-            <p className="mx-auto mt-3 max-w-lg text-sm leading-6 text-white/60">
-              Are you new in UI/UX, Back End Dev, Mobile App Dev, Web Dev,
-              Digital Marketing, Product Management, Data Science, etc and
-              seeking for where to grow your skill? Start an internship with
-              us today.
+            <p className="mt-3 max-w-lg text-sm leading-6 text-gray-500">
+              Our internship programme puts developers, analysts, and
+              security engineers on real client work with real mentorship,
+              the fastest route from learning to shipping.
             </p>
 
-            <button className="mt-6 rounded-full bg-[#f2a93b] px-7 py-3 text-sm font-semibold text-[#163527] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-              Apply for Internship
+            <button className="mt-6 rounded-full bg-[#f2a93b] px-6 py-3 text-sm font-semibold text-[#163527] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+              Apply for internship
             </button>
-
           </div>
-        </div>
 
+          <div className="aspect-[4/3] w-full rounded-xl bg-gray-100 sm:w-1/2" />
+        </div>
       </div>
     </section>
   );

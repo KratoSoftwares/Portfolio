@@ -1,13 +1,3 @@
-const avatars = [
-  "https://randomuser.me/api/portraits/men/32.jpg",
-  "https://randomuser.me/api/portraits/women/44.jpg",
-  "https://randomuser.me/api/portraits/men/65.jpg",
-  "https://randomuser.me/api/portraits/women/68.jpg",
-  "https://randomuser.me/api/portraits/men/12.jpg",
-  "https://randomuser.me/api/portraits/women/22.jpg",
-  "https://randomuser.me/api/portraits/men/50.jpg",
-];
-
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#163527]">
@@ -20,34 +10,36 @@ function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-5 py-12 text-center sm:px-6 sm:py-16">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-center sm:px-6 sm:py-16 sm:gap-10">
+        <div className="flex flex-col sm:w-1/2">
+          <span className="mb-4 inline-flex max-w-fit gap-2 border-t border-t-[#f2a93b] py-1.5 text-xs font-semibold uppercase tracking-wide text-[#f2a93b]">
+            Kratos Software Technologies
+          </span>
 
-        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#f2a93b]">
-          A team of brilliant minds
-        </span>
+          <h1 className="text-3xl font-normal leading-tight tracking-tight text-white sm:text-4xl">
+            We build <span className="text-[#f2a93b]">solutions</span>. We
+            build <span className="text-[#f2a93b]">people</span>. We build{" "}
+            <span className="text-[#f2a93b]">businesses</span>
+          </h1>
 
-        <h1 className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-          We build digital solutions that solve real problems
-        </h1>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
+            A software firm in Lagos designing and delivering SaaS products
+            and custom applications, while training the next generation of
+            developers through hands-on internships.
+          </p>
 
-        <p className="mt-4 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-          A passionate team creating modern, scalable and meaningful digital
-          experiences.
-        </p>
+          <div className="mt-6 flex flex-row gap-4">
+            <button className="rounded-2xl bg-[#f2a93b] px-4 py-3 text-sm font-medium text-[#163527] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+              See our work
+            </button>
+            <button className="rounded-2xl border border-white px-4 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+              Start a project
+            </button>
+          </div>
+        </div>
 
-        <button className="mt-6 rounded-full bg-[#f2a93b] px-7 py-3 text-sm font-semibold text-[#163527] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-          See our work
-        </button>
-
-        <div className="mt-8 flex -space-x-3">
-          {avatars.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt="Team member"
-              className="h-10 w-10 rounded-full border-2 border-[#163527] object-cover"
-            />
-          ))}
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white sm:w-1/2">
+          {/* swap for a real hero image */}
         </div>
       </div>
     </section>

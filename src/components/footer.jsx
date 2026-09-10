@@ -17,23 +17,23 @@ function Footer() {
       <div className="mx-auto w-full  px-5 py-8 sm:px-6">
         <div className="flex flex-col gap-6 border-b border-white/10 pb-6 sm:flex-row sm:justify-between">
           <div>
-            <Link to="/" className="flex flex-row border-b-2 border-b-[#f2b632] py-2 w-fit items-center justify-center">
-              {/* Logo + Kratos */}
-              <div className="flex items-center ">
+            <Link
+              to="/"
+              className="flex flex-col border-b-2 border-b-[#f2b632] py-2 w-fit"
+            >
+              <div className="flex items-baseline">
                 <img
                   src={logo}
                   alt="Kratos Software Technologies"
                   className="h-10 w-auto object-contain"
                 />
-
-                <span className="text-[#204d2f] text-[20px] font-bold tracking-[1px] -ml-1 ">
+                <span className="text-[#204d2f] align-text-bottom text-[20px] font-bold tracking-[1px] -ml-1">
                   ratos
                 </span>
               </div>
 
-              {/* Tagline */}
-              <span className="text-[#204d2f] text-[20px] font-bold tracking-[1px] ml-1 ">
-                SOFTWARE TECHNOLOGIES
+              <span className="text-[#204d2f] text-[10px] font-bold uppercase tracking-[1px]">
+                Software Technologies
               </span>
             </Link>
 
@@ -59,17 +59,15 @@ function Footer() {
 
             <a
               href="mailto:Kratosoftwares@gmail.com"
-              className="text-sm font-medium text-[#11361e] border-b border-b-[#f2b632] transition-colors hover:text-[#ffc45c]"
+              className="text-sm max-w-fit font-medium text-[#11361e] border-b border-b-[#f2b632] transition-colors hover:text-[#ffc45c]"
             >
               Kratosoftwares@gmail.com
             </a>
             <p className="pt-4 text-center text-xs text-[#11361e]">
-          © 2026 Kratos Software Technologies. All Rights Reserved.
-        </p>
+              © 2026 Kratos Software Technologies. All Rights Reserved.
+            </p>
           </div>
         </div>
-
-        
       </div>
     </footer>
   );

@@ -17,26 +17,23 @@ function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 p-2 z-50 bg-white text-[#163527]">
+    <header className="sticky top-0 p-2 z-50 bg-[#faf8f3] text-[#163527]">
       <nav className="mx-auto flex h-12 w-full  items-center justify-between px-5 py-2 sm:px-3 sm:py-2">
-        <Link to="/" className="flex flex-col w-fit">
-          {/* Logo + Kratos */}
-          <div className="flex items-center">
-            <img
-              src={logo}
-              alt="Kratos Software Technologies"
-              className="h-10 w-auto object-contain"
-            />
+        <Link to="/" className="flex items-center w-fit">
+          <img
+            src={logo}
+            alt="Kratos Software Technologies"
+            className="h-10 w-auto object-contain"
+          />
 
-            <span className="text-[#163527] text-[20px] font-bold tracking-[1px] -ml-1 ">
+          <div className="flex flex-col  items-baseline -ml-1">
+            <span className="text-[#163527] text-[20px] font-bold tracking-[1px] leading-none">
               ratos
             </span>
+            <span className="text-[#163527] text-[10px] font-medium tracking-[3px] leading-none mt-1">
+              SOFTWARE TECHNOLOGIES
+            </span>
           </div>
-
-          {/* Tagline */}
-          <span className="text-[#163527] text-[10px] font-medium tracking-[3px] ml-11.75 -mt-1">
-            SOFTWARE TECHNOLOGIES
-          </span>
         </Link>
         {/* Desktop */}
         <div className="hidden items-center gap-6 md:flex">

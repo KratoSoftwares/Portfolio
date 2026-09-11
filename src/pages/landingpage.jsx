@@ -6,6 +6,7 @@ import OurProcess from "../components/ourProcess";
 import FlagshipWork from "../components/flagshipwork";
 import IntershipCTA from "../components/internShipCta";
 import Footer from "../components/footer";
+
 import { motion } from "framer-motion";
 
 function LandingPage() {

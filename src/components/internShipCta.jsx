@@ -1,4 +1,4 @@
-function IntershipCTA() {
+function InternshipCTA(){
   return (
     <section className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
@@ -24,11 +24,11 @@ function IntershipCTA() {
             </button>
           </div>
 
-          <div className="aspect-[4/3] w-full rounded-xl bg-gray-100 sm:w-1/2" />
+          
         </div>
       </div>
     </section>
   );
 }
 
-export default IntershipCTA;
+export default InternshipCTA;

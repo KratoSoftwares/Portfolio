@@ -3,32 +3,41 @@ import Footer from "../components/footer";
 import { motion } from "framer-motion";
 import { fadeUp } from "../animations/variants";
 import Favour from "../assets/favour.png";
-import Emmanuella from "../assets/Emmanuella.png"
-import Tofunmi from "../assets/Tofunmi.png"
-import Samuel from "../assets/Samuel.png"
-import Hope from "../assets/Hope.png"
-import Olamide from "../assets/Olamide.png"
+import Emmanuella from "../assets/Emmanuella.png";
+import Tofunmi from "../assets/Tofunmi.png";
+import Samuel from "../assets/Samuel.png";
+import Hope from "../assets/Hope.png";
+import kelvin from "../assets/kelvin.jpg";
+import Godwin from "../assets/Godwin.jpg";
+import Olamide from "../assets/Olamide.png";
+import Olanrewaju from "../assets/Olanrewaju.png"
+import { useNavigate } from "react-router-dom";
 
 function Team() {
+  const navigate = useNavigate();
   const Leadership = [
     { name: "Favour Leader", role: "CTO / HEAD OF PRODUCT", img: "" },
   ];
 
   const products = [
-    { name: "Favour Ikechukwu", role: "Product Manager", img: {Favour} },
-    { name: "Emmanuel Ogah", role: "Product Designer", img: {Emmanuella} },
-    { name: "Tofunmi Emmanuel", role: "Product Designer", img: {Tofunmi} },
+    { name: "Favour Ikechukwu", role: "Product Manager", img: Favour },
+    { name: "Emmanuel Ogah", role: "Product Designer", img: Emmanuella },
+    { name: "Tofunmi Emmanuel", role: "Product Designer", img: Tofunmi },
   ];
 
   const Developers = [
-    { name: "Egwi Kelvin", role: "Mobile Developer", img: "" },
-    { name: "Samuel Ola", role: "Backend Developer", img:{Samuel} },
-    { name: "Apochi Godwin", role: "Front End Developer", img: "" },
+    { name: "Egwi Kelvin", role: "Mobile Developer", img: kelvin },
+    { name: "Samuel Ola", role: "Backend Developer", img: Samuel },
+    { name: "Apochi Godwin", role: "Front End Developer", img: Godwin },
   ];
 
   const Publishers = [
-    { name: "Nwaji Hope", role: "Digital Marketer", img: {Hope} },
-    { name: "Adetola Olamide", role: "Data Scientist", img: {Olamide} },
+    { name: "Nwaji Hope", role: "Digital Marketer", img: Hope },
+    { name: "Adetola Olamide", role: "Data Scientist", img: Olamide },
+  ];
+
+  const Security = [
+    { name: "Lawal Olanrewaju", role: "Cybersecurity Engineer", img: Olanrewaju },
   ];
 
   const cardContainer = {
@@ -49,8 +58,11 @@ function Team() {
 
   // Reusable card — keeps every section's sizing identical
   const TeamCard = ({ person }) => (
-    <motion.div variants={cardAnimation} className="flex flex-col gap-2.5">
-      <div className="aspect-4/5 w-full overflow-hidden rounded-sm bg-gray-100">
+    <motion.div
+      variants={cardAnimation}
+      className="flex w-32 flex-col gap-2.5 sm:w-40"
+    >
+      <div className="aspect-[4/5] w-full overflow-hidden rounded-sm bg-gray-100">
         {person.img ? (
           <img
             src={person.img}
@@ -67,7 +79,7 @@ function Team() {
   );
 
   // Reusable section wrapper — label + grid, same shape for every group
-  const TeamSection = ({ title, people, cols = "sm:grid-cols-3" }) => (
+  const TeamSection = ({ title, people }) => (
     <motion.div
       className="mt-10"
       initial="hidden"
@@ -79,7 +91,7 @@ function Team() {
         {title}
       </span>
 
-      <div className={`grid grid-cols-1 gap-6 ${cols}`}>
+      <div className="flex flex-wrap justify-center gap-16 sm:justify-start">
         {people.map((person) => (
           <TeamCard key={person.name} person={person} />
         ))}
@@ -128,40 +140,45 @@ function Team() {
       ========================== */}
 
       <section className="relative mx-auto max-w-6xl overflow-hidden px-5 pb-12 sm:px-6">
-        <TeamSection title="Leadership" people={Leadership} cols="sm:grid-cols-3" />
+        <TeamSection title="Leadership" people={Leadership} />
         <TeamSection title="Product" people={products} />
         <TeamSection title="Engineering" people={Developers} />
-        <TeamSection title="Growth" people={Publishers} cols="sm:grid-cols-2" />
+        <TeamSection title="Growth" people={Publishers} />
+        <TeamSection title="Security" people={Security} />
 
         {/* =========================
             INTERNSHIP CTA
         ========================== */}
-
-        <motion.div
-          className="mt-10 border-t border-gray-300 pt-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeUp}
-        >
-          <div className="max-w-xl px-1">
-            <p className="text-sm font-medium leading-6 text-black sm:text-base">
-              We add one person a year, at most. Usually, an intern who
-              stayed.
-            </p>
-
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.15 }}
-              className="mt-4 rounded-lg bg-[#163527] px-4 py-2 font-sans text-[10px] font-medium text-white transition-colors hover:bg-[#214b35]"
-            >
-              Apply for Internship here
-            </motion.button>
-          </div>
-        </motion.div>
       </section>
+      <motion.div
+        className="mt-10 border-t w-full flex flex-col pt-6 pb-6 bg-[#204d2f]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+      >
+        <div className=" mx-auto flex flex-col justify-center text-center gap-6 items-center max-w-xl px-1">
+          <h3 className="text-[#faf8f3] text-2xl">
+            Want to join the next cohort?
+          </h3>
+          <p className="text-sm font-medium leading-6 text-[#faf8f3] sm:text-base">
+            We train developers, designers, analyst and security engineers on
+            live client work
+          </p>
 
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
+            onClick={() => {
+              navigate("/intern");
+            }}
+            className="mt-4 rounded-lg   bg-[#f2b632] px-4 py-2 font-sans text-sm font-medium text-[#0d2213] transition-colors hover:cursor-pointer tracking-wide"
+          >
+            Apply for Internship here
+          </motion.button>
+        </div>
+      </motion.div>
       <Footer />
     </div>
   );

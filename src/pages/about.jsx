@@ -2,23 +2,44 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { motion } from "framer-motion";
 import { fadeUp } from "../animations/variants";
+import Favour from "../assets/favour.png";
+import Emmanuella from "../assets/Emmanuella.png";
+import Tofunmi from "../assets/Tofunmi.png";
+import Samuel from "../assets/Samuel.png";
+import Hope from "../assets/Hope.png";
+import Ellipse from "../assets/Ellipse.png";
+import Ellipse2 from "../assets/Ellipse2.png";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate();
+  const teamMembers = [
+    { src: Favour },
+    { src: Emmanuella },
+    { src: Tofunmi },
+    { src: Samuel },
+    { src: Hope },
+  ];
   const values = [
     {
-      name: "ship fast",
+      name: "build",
+      lastName: " fast",
       desc: "Brief to working build in weeks, not quarters",
     },
     {
-      name: "build secure",
+      name: "build",
+      lastName: " secure",
       desc: "Security and QA at every stage, not an afterthought",
     },
     {
-      name: "teach well",
+      name: "teach",
+      lastName: " well",
       desc: "interns leave with real, shipped work behind them",
     },
     {
-      name: "own the outcome",
+      name: "own ",
+      middleName: "the",
+      lastName: "outcome",
       desc: "we stay accountable to results, not just delivery",
     },
   ];
@@ -45,7 +66,7 @@ function About() {
       ========================== */}
 
       <motion.section
-        className="bg-[#163527] text-white "
+        className="bg-[#204d2f] text-white "
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -113,13 +134,12 @@ function About() {
           </div>
         </section>
 
-
         {/* =========================
               vision and mission
           ========================== */}
 
         <motion.section
-          className="mt-10 flex flex-col md:flex-row py-6 px-5 sm:px-6 md:py-12 gap-6 border-t bg-[#163527]  justify-center items-center"
+          className="mt-10 flex flex-col md:flex-row py-6 px-5 md:gap-12 sm:px-6 md:py-12 gap-6 border-t bg-[#204d2f]  justify-center items-center"
           initial="hidden"
           whileInView="visible"
           viewport={{
@@ -130,29 +150,39 @@ function About() {
         >
           <motion.div
             variants={fadeUp}
-            className="cursor-default rounded-2xl shadow-sm bg-[#faf8f3] px-4 py-7 w-full max-w-xs min-h-40"
+            className="cursor-default rounded-2xl shadow-sm bg-[#faf8f3] pl-4 pt-7 w-full max-w-xs min-h-40"
           >
-            <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#163527] text-2xl font-medium text-[#163527]">
-              our vision
-            </h3>
+            <div className="flex flex-col w-full pb-4 md:pb-8">
+              <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#204d2f] text-2xl font-medium text-[#204d2f]">
+                our vision
+              </h3>
 
-            <p className="mt-2 text-sm leading-6  text-[#0d2213]">
-              Human-centered technology that solves problems and scales
-              businesses across Africa
-            </p>
+              <p className="mt-2 text-sm leading-6  text-[#0d2213]">
+                Human-centered technology that solves problems and scales
+                businesses across Africa
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <img src={Ellipse2} alt="image" />
+            </div>
           </motion.div>
           <motion.div
             variants={fadeUp}
-            className="cursor-default shadow-sm rounded-2xl bg-[#faf8f3] px-4 py-7 w-full max-w-xs min-h-40"
+            className="cursor-default shadow-sm rounded-2xl bg-[#faf8f3] pl-4 pt-7 w-full max-w-xs min-h-40"
           >
-            <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#163527] text-2xl font-medium text-[#163527]">
-              our mission
-            </h3>
+            <div className="flex flex-col w-full pb-4 md:pb-8">
+              <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#204d2f] text-2xl font-medium text-[#204d2f]">
+                our mission
+              </h3>
 
-            <p className="mt-2 text-sm leading-6 text-[#0d2213]">
-              Human-centered technology that solves problems and scales
-              businesses across Africa
-            </p>
+              <p className="mt-2 text-sm leading-6 text-[#0d2213]">
+                Human-centered technology that solves problems and scales
+                businesses across Africa
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <img src={Ellipse2} alt="image" />
+            </div>
           </motion.div>
         </motion.section>
 
@@ -160,13 +190,16 @@ function About() {
           Values
           =====================*/}
 
-        <motion.section className="mx-auto  w-full max-w-6xl px-5 py-8 sm:px-6 sm:py-10" initial="hidden"
+        <motion.section
+          className="mx-auto  w-full max-w-6xl px-5 py-8 sm:px-6 sm:py-10"
+          initial="hidden"
           whileInView="visible"
           viewport={{
             once: true,
             amount: 0.15,
           }}
-          variants={staggerContainer}>
+          variants={staggerContainer}
+        >
           <motion.p
             variants={fadeUp}
             className="max-w-fit text-[20px] mb-4 font-medium leading-6 uppercase text-[#0d2213] border-b-2 border-b-[#f2b632]"
@@ -174,14 +207,32 @@ function About() {
             our values
           </motion.p>
           <div className="mx-auto w-full max-w-4xl  px-6 py-8 md:px-12 md:py-14 grid grid-cols-1 md:grid-cols-2  gap-6 justify-items-center">
-            {values.map((value) => (
+            {values.map((value, index) => (
               <motion.div
-                key={value.name}
+                key={index}
                 variants={fadeUp}
-                className="bg-white rounded-2xl shadow-sm w-full max-w-xs min-h-32 px-4 py-7 flex flex-col justify-center"
+                className="bg-[#204d2f] rounded-2xl shadow-sm w-full max-w-xs min-h-32 pl-4 pt-7 flex flex-col justify-center"
               >
-                <h3 className="mt-1 mb-1 max-w-fit border-b border-b-[#163527] text-[#163527] text-2xl capitalize font-medium">{value.name}</h3>
-                <p className="mt-2 text-[#0d2213]">{value.desc}</p>
+                {" "}
+                <div className="flex flex-col w-full pb-4 md:pb-8 ">
+                  <h3 className="mt-1 mb-1 max-w-fit   text-2xl capitalize font-medium  ">
+                    <span
+                      className={` ${index > 1 ? "text-[#f2b632]" : "text-white"}`}
+                    >
+                      {value.name}
+                    </span>
+                    <span className="text-white">{value.middleName}</span>{" "}
+                    <span
+                      className={`${index <= 1 ? "text-[#f2b632]" : index === 2 ? "text-white" : "text-[#f2b632]"}`}
+                    >
+                      {value.lastName}
+                    </span>
+                  </h3>
+                  <p className="mt-2 text-[#faf8f3]">{value.desc}</p>
+                </div>
+                <div className="flex justify-end w-full">
+                  <img src={Ellipse} alt="img" />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -190,30 +241,48 @@ function About() {
         {/*=====================
           The Team
           ======================*/}
-          <section className="w-full bg-[#163527] ">
+        <section className="w-full bg-[#204d2f] ">
           <motion.div
-          className="mx-auto  w-full max-w-6xl  px-5 py-8 sm:px-6 sm:py-10" initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-            amount: 0.15,
-          }}
-          variants={staggerContainer}>
-          <div className="mx-auto w-full flex mb-2.5 flex-row justify-between items-center">
-           <span className="text-[#f8f7ee] border-b border-b-[#f2b632] font-medium uppercase">The Team</span>
-           <span className="text-sm text-[#f8f7ee] border-b border-b-[#f2b632]">meet the full team</span>
-          </div>
+            className="mx-auto  w-full max-w-6xl  px-5 py-8 sm:px-6 sm:py-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
+            variants={staggerContainer}
+          >
+            <div className="mx-auto w-full flex mb-2.5 flex-row justify-between items-center">
+              <span className="text-[#f8f7ee] border-b border-b-[#f2b632] font-medium uppercase">
+                The Team
+              </span>
+              <span
+                onClick={() => {
+                  navigate("/team");
+                }}
+                className="hover:cursor-pointer text-sm text-[#f8f7ee] border-b border-b-[#f2b632]"
+              >
+                meet the full team <span>→</span>
+              </span>
+            </div>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
-            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
-            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
-            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
-            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
-            <motion.div variants={fadeUp} className="w-40 h-40 rounded-2xl bg-white"/>
-          </div>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeUp}
+                  className="w-full max-w-40 h-40 rounded-lg  "
+                >
+                  <img
+                    src={member.src}
+                    alt="image"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
-          </section>
-
+        </section>
       </main>
 
       {/* =========================

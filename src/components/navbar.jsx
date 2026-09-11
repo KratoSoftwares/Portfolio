@@ -18,20 +18,20 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 p-2 z-50 bg-[#faf8f3] text-[#163527]">
-      <nav className="mx-auto flex h-12 w-full  items-center justify-between px-5 py-2 sm:px-3 sm:py-2">
-        <Link to="/" className="flex items-center w-fit">
-          <img
-            src={logo}
-            alt="Kratos Software Technologies"
-            className="h-10 w-auto object-contain"
-          />
+      <nav className="mx-auto flex h-12 w-full  items-center justify-between px-2 py-2 sm:px-3 sm:py-2">
+        <Link to="/" className="flex flex-row items-center w-fit">
+          <div className="flex flex-row  items-center -ml-1">
+            <img
+              src={logo}
+              alt="Kratos Software Technologies"
+              className="h-10 w-auto object-contain"
+            />
 
-          <div className="flex flex-col  items-baseline -ml-1">
-            <span className="text-[#163527] text-[20px] font-bold tracking-[1px] leading-none">
+            <span className="text-[#204d2f] align-text-bottom text-sm font-bold tracking-[1px] -ml-1">
               ratos
             </span>
-            <span className="text-[#163527] text-[10px] font-medium tracking-[3px] leading-none mt-1">
-              SOFTWARE TECHNOLOGIES
+            <span className="text-[#204d2f] text-sm font-bold uppercase tracking-[1px] ml-1">
+              Software Technologies
             </span>
           </div>
         </Link>

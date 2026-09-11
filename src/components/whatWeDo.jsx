@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 const services = [
   {
     title: "SaaS Products",
@@ -26,6 +27,7 @@ const services = [
 ];
 
 function WhatWeDo() {
+  const navigate = useNavigate();
   return (
     <section className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
@@ -62,13 +64,14 @@ function WhatWeDo() {
           ))}
         </div>
 
-        <a
+        <p
           href="/services"
-          className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#163527] transition-all hover:gap-2.5"
+          onClick={()=>{navigate("/services")}}
+          className="mt-6 hover:cursor-pointer inline-flex items-center gap-1.5 text-sm font-semibold text-[#163527] transition-all hover:gap-2.5"
         >
           Explore our services
           <span>→</span>
-        </a>
+        </p>
       </div>
     </section>
   );

@@ -19,22 +19,21 @@ function Footer() {
           <div>
             <Link
               to="/"
-              className="flex flex-col border-b-2 border-b-[#f2b632] py-2 w-fit"
+              className="flex flex-row border-b-2 border-b-[#f2b632] py-2 w-fit"
             >
-              <div className="flex items-baseline">
+              <div className="flex items-center">
                 <img
                   src={logo}
                   alt="Kratos Software Technologies"
                   className="h-10 w-auto object-contain"
                 />
-                <span className="text-[#204d2f] align-text-bottom text-[20px] font-bold tracking-[1px] -ml-1">
+                <span className="text-[#204d2f] align-text-bottom text-sm font-bold tracking-[1px] -ml-1">
                   ratos
                 </span>
+                <span className="text-[#204d2f] text-sm font-bold uppercase tracking-[1px] ml-1">
+                  Software Technologies
+                </span>
               </div>
-
-              <span className="text-[#204d2f] text-[10px] font-bold uppercase tracking-[1px]">
-                Software Technologies
-              </span>
             </Link>
 
             <p className="mt-2 text-xs text-[#11361e]">Lagos, Nigeria.</p>

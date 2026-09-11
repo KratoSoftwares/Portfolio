@@ -1,14 +1,7 @@
 function Hero2() {
   return (
-    <section className="relative overflow-hidden bg-[#163527]">
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          background:
-            "radial-gradient(600px circle at 50% 0%, rgba(242,169,59,0.15), transparent 70%)",
-        }}
-        aria-hidden
-      />
+    <section className="relative overflow-hidden bg-[#204d2f]">
+      
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start px-5 py-12  sm:px-6 sm:py-16">
         <span className="mb-4 max-w-fit  items-center  gap-2  border-t border-t-[#f2b632]   text-xs font-medium uppercase tracking-wide text-[#f2b632]">

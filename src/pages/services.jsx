@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { fadeUp } from "../animations/variants";
 import { useNavigate } from "react-router-dom";
 import Image2 from "../assets/image2.png";
+import { Link } from "react-router-dom";
 
 function Services() {
   const navigate = useNavigate();
@@ -12,11 +13,13 @@ function Services() {
       name: "SaaS Products",
       desc: "Subscription software, designed, built and scaled end to end.",
       dir: "See it in KOVA",
+      to:"/projects"
     },
     {
       name: "Custom App Development",
       desc: "Web, mobile, and backend tailored to the business problem.",
       dir: "See our work",
+      to:"/projects"
     },
     {
       name: "Data & AI Integration",
@@ -27,6 +30,7 @@ function Services() {
       name: "Talent Development",
       desc: "Structured internships that turn industry-ready developers.",
       dir: "View internship",
+      to:"/intern"
     },
   ];
 
@@ -110,13 +114,14 @@ function Services() {
               </p>
 
               {service.dir && (
-                <a
-                  href="#"
+                <Link
+              
+                  to={service.to}
                   className="mt-4 inline-flex border-b-2 border-b-[#f2b632] w-fit items-center gap-1.5 text-xs font-semibold text-[#0d2213] transition-all hover:gap-2.5"
                 >
                   {service.dir} {""}
                   <span>→</span>
-                </a>
+                </Link>
               )}
             </motion.div>
           ))}

@@ -100,7 +100,7 @@ function About() {
 
       <main className="bg-[#faf8f3]">
         <section className="mx-auto  w-full max-w-6xl px-5 py-8 sm:px-6 sm:py-10">
-          <div className="flex flex-cols gap-8 sm:justify-between sm:items-center sm:flex-row sm:gap-26">
+          <div className="flex flex-col gap-8 sm:justify-between md:items-center md:flex-row sm:gap-26">
             {/* LEFT SIDE */}
 
             <motion.div
@@ -140,7 +140,7 @@ function About() {
                 and real ownership of what comes out the other end.
               </motion.p>
             </motion.div>
-            <div className="relative aspect-4/3 w-full  max-w-370 h-80 overflow-hidden rounded-xl sm:w-1/2">
+            <div className="relative aspect-4/3 w-full flex  justify-center max-w-370 h-80 overflow-hidden rounded-xl sm:w-1/2">
               <img src={HomeFrame} alt="image" className="rounded-xl h-full" />
             </div>
           </div>

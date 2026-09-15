@@ -94,8 +94,8 @@ function Projects() {
                 </p>
 
                 <div className="flex mt-5 text-flex-row items-center gap-5">
-                  <span className="border border-">{project.techStack[0,0]}</span>
-                  <span>{project.techStack[0,1]}</span>
+                  <span className="border  rounded-sm border-[#dddfd7] px-2 shadown-sm text-[#0d2213] text-xs bg-white">{project.techStack[0,0]}</span>
+                  <span className="border rounded-sm box-border border-[#dddfd7] px-2 shadown-sm text-[#0d2213] text-xs bg-white">{project.techStack[0,1]}</span>
                 </div>
                 {/* TYPE + YEAR */}
 

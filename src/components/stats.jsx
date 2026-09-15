@@ -12,7 +12,7 @@ function Stats() {
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-4">
           {stats.map((stat) => (
             <div key={stat.label}>
-              <p className="text-2xl font-bold tracking-tight text-[#163527] sm:text-3xl">
+              <p className="text-2xl font-bold tracking-tight text-[#204d2f] sm:text-3xl">
                 {stat.value}
               </p>
               <p className="mt-1 text-xs font-normal uppercase tracking-widest text-gray-400">

@@ -13,38 +13,39 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-[#faf8f3] px-2 text-white">
-      <div className="mx-auto w-full  px-5 py-8 sm:px-6">
-        <div className="flex flex-col gap-6 border-b border-white/10 pb-6 sm:flex-row sm:justify-between">
+    <footer className="bg-[#faf8f3] px-2 text-[#204d2f]">
+      <div className="mx-auto w-full px-5 py-8 sm:px-6">
+        <div className="flex flex-col gap-6 border-b border-[#204d2f]/10 pb-6 sm:flex-row sm:justify-between">
           <div>
             <Link
               to="/"
-              className="flex flex-row border-b-2 border-b-[#f2b632] py-2 w-fit"
+              className="flex w-fit flex-col border-b-2 border-b-[#f2b632]"
             >
-              <div className="flex items-center">
+              <div className="flex flex-row items-end">
                 <img
                   src={logo}
                   alt="Kratos Software Technologies"
                   className="h-10 w-auto object-contain"
                 />
-                <span className="text-[#204d2f] align-text-bottom text-sm font-bold tracking-[1px] -ml-1">
+                <span className="text-sm font-medium text-[#204d2f]">
                   ratos
                 </span>
-                <span className="text-[#204d2f] text-sm font-bold uppercase tracking-[1px] ml-1">
-                  Software Technologies
-                </span>
               </div>
+
+              <span className="whitespace-nowrap text-[10px] font-medium uppercase text-[#204d2f]  sm:text-sm">
+                Software Technologies
+              </span>
             </Link>
 
             <p className="mt-2 text-xs text-[#11361e]">Lagos, Nigeria.</p>
 
             <p className="mt-1 text-xs text-[#11361e]">
-              Ship Fast. Build Secure. Teach Well. Own the Outcome.
+              Build Fast. Build Secure. Teach Well. Own the Outcome.
             </p>
           </div>
 
           <div className="flex flex-col gap-3 sm:items-start">
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm sm:justify-end">
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm sm:items-start">
               {links.map((link) => (
                 <Link
                   key={link.to}
@@ -58,15 +59,16 @@ function Footer() {
 
             <a
               href="mailto:Kratosoftwares@gmail.com"
-              className="text-sm max-w-fit font-medium text-[#11361e] border-b border-b-[#f2b632] transition-colors hover:text-[#ffc45c]"
+              className="max-w-fit border-b border-b-[#f2b632] text-sm font-medium text-[#11361e] transition-colors hover:text-[#ffc45c]"
             >
               Kratosoftwares@gmail.com
             </a>
-            <p className="pt-4 text-center text-xs text-[#11361e]">
-              © 2026 Kratos Software Technologies. All Rights Reserved.
-            </p>
           </div>
         </div>
+
+        <p className="pt-4 text-center text-xs text-[#11361e]">
+          © 2026 Kratos Software Technologies. All Rights Reserved.
+        </p>
       </div>
     </footer>
   );

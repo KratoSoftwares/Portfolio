@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 function Navbar() {
@@ -17,24 +16,25 @@ function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 p-2 z-50 bg-[#faf8f3] text-[#163527]">
-      <nav className="mx-auto flex h-12 w-full  items-center justify-between px-2 py-2 sm:px-3 sm:py-2">
-        <Link to="/" className="flex flex-row items-center w-fit">
-          <div className="flex flex-row  items-center -ml-1">
+    <header className="sticky top-0 z-50 bg-[#faf8f3]  p-2 text-[#204d2f]">
+      <nav className="mx-auto flex min-h-12 w-full items-center justify-between px-0.5 py-2 sm:px-3 sm:py-2">
+        <Link to="/" className="flex w-fit flex-col">
+          <div className="flex flex-row items-end">
             <img
               src={logo}
               alt="Kratos Software Technologies"
               className="h-10 w-auto object-contain"
             />
-
-            <span className="text-[#204d2f] align-text-bottom text-sm font-bold tracking-[1px] -ml-1">
+            <span className="sm:text-sm text-[10px] font-medium text-[#204d2f]">
               ratos
             </span>
-            <span className="text-[#204d2f] text-sm font-bold uppercase tracking-[1px] ml-1">
-              Software Technologies
-            </span>
           </div>
+
+          <span className="whitespace-nowrap text-[10px] font-medium uppercase text-[#204d2f] sm:text-sm ">
+            Software Technologies
+          </span>
         </Link>
+
         {/* Desktop */}
         <div className="hidden items-center gap-6 md:flex">
           {links.map((link) => (
@@ -42,7 +42,7 @@ function Navbar() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `text-sm font-medium tracking-widest bordertransition-colors ${
+                `text-sm font-medium tracking-widest transition-colors ${
                   isActive
                     ? "border-b-2 border-b-[#f2a93b]"
                     : "text-[#163527] hover:text-[#f2a93b]"
@@ -82,7 +82,7 @@ function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-white/10 px-5 pb-5 md:hidden">
+        <div className="border-t border-[#204d2f]/10 px-5 pb-5 md:hidden">
           <div className="flex flex-col gap-3 pt-3 text-sm">
             {links.map((link) => (
               <NavLink

@@ -33,7 +33,7 @@ const steps = [
 
 function OurProcess() {
   return (
-    <section className="bg-[#163527] py-10 sm:py-14">
+    <section className="bg-[#204d2f] py-10 sm:py-14">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
         <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#f2a93b]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#f2a93b]" />

@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import Kratos from "../assets/Kratos.svg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { fadeUp, fadeLeft, fadeRight } from "../animations/variants";
@@ -9,16 +10,28 @@ function Intern() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    role: "",
+    track: "",
     portfolio: "",
     message: "",
   });
+
+  const openTracks = [
+    "Back End Development",
+    "Digital Marketing",
+    "Cyber Security",
+    "Product Manager",
+    "Product Designers",
+    "Front End Development",
+    "Mobile Development",
+    "Data Science",
+  ];
+
   const clearInputs = () => {
     setTimeout(() => {
       setFormData({
         name: "",
         email: "",
-        role: "",
+        track: "",
         portfolio: "",
         message: "",
       });
@@ -53,7 +66,7 @@ function Intern() {
     }
   };
 
-  const formContainer = {
+  const staggerContainer = {
     hidden: {},
     visible: {
       transition: {
@@ -100,7 +113,13 @@ function Intern() {
           MAIN CONTENT
       ========================== */}
       <main className="bg-[#f7f8f8]">
-        <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
+        <section className="relative   overflow-hidden px-5 py-12 sm:px-6 sm:py-16">
+          {/* Decorative oversized logo, blurred, sitting behind the content */}
+          <div
+            className="mx-auto pointer-events-none absolute inset-0 z-0 bg-no-repeat bg-center blur-md opacity-60"
+            style={{ backgroundImage: `url(${Kratos})` }}
+          />
+
           {success && (
             <motion.div
               initial={{ opacity: 0, y: -30, x: "-50%" }}
@@ -112,266 +131,258 @@ function Intern() {
               {success}
             </motion.div>
           )}
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14">
+
+          <div className="relative z-10 mx-auto max-w-6xl">
             {/* =========================
-                LEFT SIDE
+                HEADING BLOCK — full width
             ========================== */}
 
             <motion.div
-              className="flex flex-col justify-center"
               initial="hidden"
               whileInView="visible"
               viewport={{
                 once: true,
                 amount: 0.2,
               }}
-              variants={formContainer}
+              variants={staggerContainer}
             >
               {/* LABEL */}
 
               <motion.span
                 variants={fadeLeft}
-                className="w-fit border-b border-[#f2a93b] pb-1 text-[10px] font-medium uppercase tracking-wide text-[#163527]"
+                className="w-fit border-b border-b-[#0d2213] pb-1 text-[15px] font-medium uppercase tracking-wide text-[#0d2213]"
               >
-                Internship
+                Collaboration, Internship
               </motion.span>
 
               {/* HEADING */}
 
               <motion.h1
                 variants={fadeLeft}
-                className="mt-5 max-w-md text-3xl font-normal leading-tight text-[#163527] sm:text-4xl"
+                className="mt-5 max-w-2xl text-3xl font-medium leading-tight text-[#0d2213] sm:text-4xl"
               >
-                Learn by doing real work.
+                Are you new in your field and seeking somewhere to grow your
+                skill?
               </motion.h1>
 
               {/* DESCRIPTION */}
 
               <motion.p
                 variants={fadeLeft}
-                className="mt-5 max-w-md text-sm leading-6 text-gray-600"
+                className="mt-5 max-w-2xl text-sm leading-6 text-[#0d2213]"
               >
-                Join our team and work on real products, solve real problems,
-                and learn alongside people who are building things that matter.
+                We run a paid three-month internship twice a year. You join a
+                live project, you present your own work in the weekly review,
+                and you leave with something shipped that you can point at.
               </motion.p>
-
-              <motion.p
-                variants={fadeLeft}
-                className="mt-5 max-w-md text-sm leading-6 text-gray-600"
-              >
-                We are looking for curious people who are willing to learn,
-                contribute, and take ownership of their work.
-              </motion.p>
-
-              {/* WHAT YOU WILL DO */}
-
-              <motion.div variants={fadeUp} className="mt-7">
-                <h2 className="text-[20px] font-medium uppercase text-[#163527]">
-                  What you will do
-                </h2>
-
-                <motion.ul
-                  variants={formContainer}
-                  className="mt-3 space-y-2 text-sm text-gray-600"
-                >
-                  <motion.li variants={listAnimation}>
-                    • Work on real projects with the team
-                  </motion.li>
-
-                  <motion.li variants={listAnimation}>
-                    • Learn from experienced team members
-                  </motion.li>
-
-                  <motion.li variants={listAnimation}>
-                    • Contribute ideas and solutions
-                  </motion.li>
-
-                  <motion.li variants={listAnimation}>
-                    • Build practical experience
-                  </motion.li>
-                </motion.ul>
-              </motion.div>
             </motion.div>
 
             {/* =========================
-                RIGHT SIDE - FORM
+                OPEN TRACKS + FORM — flex row below the heading
             ========================== */}
 
-            <motion.div
-              className="bg-[#496d52] p-7 sm:p-9"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              variants={fadeRight}
-            >
-              <motion.form
-                onSubmit={handleSubmit}
-                className="grid grid-cols-1 gap-7 sm:grid-cols-2"
-                variants={formContainer}
+            <div className="mt-10 flex flex-col gap-10 md:flex-row md:gap-14">
+              {/* OPEN TRACKS */}
+
+              <motion.div
+                className="md:w-2/5 "
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeUp}
               >
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value="Internship application"
-                />
-                {/* NAME */}
+                <h2 className="w-fit border-b border-black pb-1 text-sm font-semibold uppercase tracking-wide text-[#0d2213]">
+                  Open Tracks
+                </h2>
 
-                <motion.div variants={fieldAnimation}>
-                  <label
-                    htmlFor="name"
-                    className="text-[10px] font-medium uppercase text-white/75"
-                  >
-                    Your Name
-                  </label>
+                <motion.ul
+                  variants={staggerContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  className="mt-4 space-y-9 text-sm text-[#0d2213] "
+                >
+                  {openTracks.map((track) => (
+                    <motion.li className="border-b border-b-[#0d2213] pb-2" key={track} variants={listAnimation}>
+                      {track}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
 
+              {/* =========================
+                  FORM
+              ========================== */}
+
+              <motion.div
+                className="rounded-xl bg-[#204d2f]/90 p-7 sm:p-9 md:w-3/5"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: true,
+                  amount: 0.2,
+                }}
+                variants={fadeRight}
+              >
+                <span className="w-fit border-b border-[#f2b632] pb-1 text-xs font-semibold uppercase tracking-wide text-[#f8f7ee]">
+                  Apply Now
+                </span>
+
+                <motion.form
+                  onSubmit={handleSubmit}
+                  className="mt-6 grid grid-cols-1 gap-7 sm:grid-cols-2"
+                  variants={staggerContainer}
+                >
                   <input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    name="name"
-                    type="text"
-                    className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none placeholder:text-white/50 focus:border-[#f2a93b]"
+                    type="hidden"
+                    name="_subject"
+                    value="Internship application"
                   />
-                </motion.div>
 
-                {/* EMAIL */}
+                  {/* FULL NAME */}
 
-                <motion.div variants={fieldAnimation}>
-                  <label
-                    htmlFor="email"
-                    className="text-[10px] font-medium uppercase text-white/75"
+                  <motion.div variants={fieldAnimation}>
+                    <label
+                      htmlFor="name"
+                      className="text-[10px] font-medium uppercase text-[#f8f7ee]"
+                    >
+                      Full Name
+                    </label>
+
+                    <input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      name="name"
+                      type="text"
+                      className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-[#f8f7ee] outline-none placeholder:text-white/50 focus:border-[#f2a93b]"
+                    />
+                  </motion.div>
+
+                  {/* EMAIL */}
+
+                  <motion.div variants={fieldAnimation}>
+                    <label
+                      htmlFor="email"
+                      className="text-[10px] font-medium uppercase text-[#f8f7ee]"
+                    >
+                      Email
+                    </label>
+
+                    <input
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      type="email"
+                      className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none placeholder:text-white/50 focus:border-[#f2a93b]"
+                    />
+                  </motion.div>
+
+                  {/* TRACK */}
+
+                  <motion.div
+                    variants={fieldAnimation}
+                    className="sm:col-span-2"
                   >
-                    Email
-                  </label>
+                    <label
+                      htmlFor="track"
+                      className="text-[10px] font-medium uppercase text-[#f8f7ee]"
+                    >
+                      Track
+                    </label>
 
-                  <input
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    type="email"
-                    className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none placeholder:text-white/50 focus:border-[#f2a93b]"
-                  />
-                </motion.div>
+                    <input
+                      id="track"
+                      name="track"
+                      value={formData.track}
+                      onChange={(e) =>
+                        setFormData({ ...formData, track: e.target.value })
+                      }
+                      type="text"
+                      placeholder="e.g. Front End Development"
+                      className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none placeholder:text-white/50 focus:border-[#f2a93b]"
+                    />
+                  </motion.div>
 
-                {/* AREA OF INTEREST */}
+                  {/* PORTFOLIO */}
 
-                <motion.div variants={fieldAnimation}>
-                  <label
-                    htmlFor="role"
-                    className="text-[10px] font-medium uppercase text-white/75"
+                  <motion.div
+                    variants={fieldAnimation}
+                    className="sm:col-span-2"
                   >
-                    Area of Interest
-                  </label>
+                    <label
+                      htmlFor="portfolio"
+                      className="text-[10px] font-medium uppercase text-[#f8f7ee]"
+                    >
+                      Portfolio or Repository Link
+                    </label>
 
-                  <select
-                    id="role"
-                    name="role"
-                    value={formData.role}
-                    onChange={(e) =>
-                      setFormData({ ...formData, role: e.target.value })
-                    }
-                    defaultValue=""
-                    className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none focus:border-[#f2a93b]"
+                    <input
+                      id="portfolio"
+                      name="portfolio"
+                      value={formData.portfolio}
+                      onChange={(e) =>
+                        setFormData({ ...formData, portfolio: e.target.value })
+                      }
+                      type="text"
+                      className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none placeholder:text-white/50 focus:border-[#f2a93b]"
+                    />
+                  </motion.div>
+
+                  {/* SOMETHING YOU MADE */}
+
+                  <motion.div
+                    variants={fieldAnimation}
+                    className="sm:col-span-2"
                   >
-                    <option value="" disabled className="text-black">
-                      Select an area
-                    </option>
+                    <label
+                      htmlFor="message"
+                      className="text-[10px] font-medium uppercase text-[#f8f7ee]"
+                    >
+                      Something You Made and Why It Matters
+                    </label>
 
-                    <option value="frontend" className="text-black">
-                      Front End Development
-                    </option>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
+                      rows="4"
+                      className="mt-4 w-full resize-none border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none focus:border-[#f2a93b]"
+                    />
+                  </motion.div>
 
-                    <option value="backend" className="text-black">
-                      Back End Development
-                    </option>
+                  {/* BUTTON */}
 
-                    <option value="design" className="text-black">
-                      Product Design
-                    </option>
-
-                    <option value="marketing" className="text-black">
-                      Digital Marketing
-                    </option>
-
-                    <option value="data" className="text-black">
-                      Data Analysis
-                    </option>
-                  </select>
-                </motion.div>
-
-                {/* PORTFOLIO */}
-
-                <motion.div variants={fieldAnimation}>
-                  <label
-                    htmlFor="portfolio"
-                    className="text-[10px] font-medium uppercase text-white/75"
+                  <motion.div
+                    variants={fieldAnimation}
+                    className="sm:col-span-2"
                   >
-                    Portfolio / GitHub
-                  </label>
+                    <motion.button
+                      type="submit"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ duration: 0.15 }}
+                      className="rounded-full bg-[#f2a93b] px-5 py-2 text-xs font-bold text-[#204d2f]"
+                    >
+                      Submit application
+                    </motion.button>
 
-                  <input
-                    id="portfolio"
-                    name="portfolio"
-                    value={formData.portfolio}
-                    onChange={(e) =>
-                      setFormData({ ...formData, portfolio: e.target.value })
-                    }
-                    type="text"
-                    className="mt-4 w-full border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none placeholder:text-white/50 focus:border-[#f2a93b]"
-                  />
-                </motion.div>
-
-                {/* MESSAGE */}
-
-                <motion.div variants={fieldAnimation} className="sm:col-span-2">
-                  <label
-                    htmlFor="message"
-                    className="text-[10px] font-medium uppercase text-white/75"
-                  >
-                    Tell us about yourself
-                  </label>
-
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    rows="4"
-                    className="mt-4 w-full resize-none border-0 border-b border-white/50 bg-transparent px-0 py-2 text-xs text-white outline-none focus:border-[#f2a93b]"
-                  />
-                </motion.div>
-
-                {/* BUTTON */}
-
-                <motion.div variants={fieldAnimation} className="sm:col-span-2">
-                  <motion.button
-                    type="submit"
-                    whileHover={{
-                      scale: 1.03,
-                    }}
-                    whileTap={{
-                      scale: 0.97,
-                    }}
-                    transition={{
-                      duration: 0.15,
-                    }}
-                    className="rounded-full bg-[#f2a93b] px-5 py-2 text-xs font-bold text-[#163527]"
-                  >
-                    Apply for Internship
-                  </motion.button>
-                </motion.div>
-              </motion.form>
-            </motion.div>
+                    <p className="mt-3 text-[11px] text-white/60">
+                      Or email your details to kratosoftwares@gmail.com. We
+                      reply to every applicant.
+                    </p>
+                  </motion.div>
+                </motion.form>
+              </motion.div>
+            </div>
           </div>
         </section>
       </main>

@@ -9,6 +9,7 @@ import Samuel from "../assets/Samuel.png";
 import Hope from "../assets/Hope.png";
 import Ellipse from "../assets/Ellipse.png";
 import Ellipse2 from "../assets/Ellipse2.png";
+import HomeFrame from "../assets/homeFrame.png";
 import { useNavigate } from "react-router-dom";
 
 function About() {
@@ -74,7 +75,7 @@ function About() {
         <div className=" mx-auto w-full max-w-6xl flex flex-col gap-2 px-5 py-10 sm:px-6 sm:py-14 items-start">
           <motion.span
             variants={fadeUp}
-            className="inline-flex border-b-2 border-[#f2b632] pb-1 text-[20px] font-medium uppercase tracking-wider text-[#f2b632]"
+            className="inline-flex border-b-2 border-[#f2b632] pb-1 text-xs font-medium uppercase tracking-wider text-[#f2b632]"
           >
             who we are
           </motion.span>
@@ -99,7 +100,7 @@ function About() {
 
       <main className="bg-[#faf8f3]">
         <section className="mx-auto  w-full max-w-6xl px-5 py-8 sm:px-6 sm:py-10">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.25fr_0.9fr] md:gap-12">
+          <div className="flex flex-cols gap-8 sm:justify-between sm:items-center sm:flex-row sm:gap-26">
             {/* LEFT SIDE */}
 
             <motion.div
@@ -110,10 +111,11 @@ function About() {
                 amount: 0.15,
               }}
               variants={staggerContainer}
+              className="flex flex-col items-start"
             >
               <motion.p
                 variants={fadeUp}
-                className="max-w-fit text-[20px] font-medium leading-6 uppercase text-[#0d2213] border-b-2 border-b-[#f2b632]"
+                className="max-w-fit text-xs font-medium leading-6 uppercase text-[#0d2213] border-b-2 border-b-[#f2b632]"
               >
                 why we started
               </motion.p>
@@ -122,15 +124,25 @@ function About() {
                 variants={fadeUp}
                 className="mt-7 max-w-xl text-sm leading-8 text-[#0d2213]"
               >
-                Kratos software technologies designs and delivers SaaS products
-                and custom software to businesses across Africa,starting with
-                Nigerian small business owners. Alongside the products we've
-                build,we run structured internship programs that train
-                developers into industry ready professionals because we believe
-                good software and good people are built the same way:through
-                real problems,hands-on work and ownership of the outcome
+                We didn't set out to build a company. We were a group of
+                developers, designers, and a marketer who came together for a
+                buildathon, expecting it to end when the weekend did. We won
+                first place. Then we kept going. Building KOVA for Nigerian
+                market traders, artisans, and WhatsApp sellers taught us
+                something we couldn't unlearn: the businesses running this
+                economy are often the ones software forgets. Not because they
+                don't deserve good tools, but because most tech is built for
+                someone else's market first. We decided to build for ours. So
+                instead of chasing one win and walking away, we built Kratos. We
+                build products, but we also train the developers who'll build
+                the next ones, because we believe good software and good people
+                grow the same way: through real problems, real hands-on work,
+                and real ownership of what comes out the other end.
               </motion.p>
             </motion.div>
+            <div className="relative aspect-4/3 w-full  max-w-370 h-80 overflow-hidden rounded-xl sm:w-1/2">
+              <img src={HomeFrame} alt="image" className="rounded-xl h-full" />
+            </div>
           </div>
         </section>
 

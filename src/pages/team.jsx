@@ -15,9 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 function Team() {
   const navigate = useNavigate();
-  const Leadership = [
-    { name: "Favour Leader", role: "CTO / HEAD OF PRODUCT", img: "" },
-  ];
+  
 
   const products = [
     { name: "Favour Ikechukwu", role: "Product Manager", img: Favour },
@@ -26,9 +24,9 @@ function Team() {
   ];
 
   const Developers = [
-    { name: "Egwi Kelvin", role: "Mobile Developer", img: kelvin },
+    { name: "Egwi Kelvin", role: "Fullstack Developer", img: kelvin },
     { name: "Samuel Ola", role: "Backend Developer", img: Samuel },
-    { name: "Apochi Godwin", role: "Front End Developer", img: Godwin },
+    { name: "Apochi Godwin", role: "Frontend Developer", img: Godwin },
   ];
 
   const Publishers = [
@@ -140,7 +138,7 @@ function Team() {
       ========================== */}
 
       <section className="relative mx-auto max-w-6xl overflow-hidden px-5 pb-12 sm:px-6">
-        <TeamSection title="Leadership" people={Leadership} />
+        
         <TeamSection title="Product" people={products} />
         <TeamSection title="Engineering" people={Developers} />
         <TeamSection title="Growth" people={Publishers} />

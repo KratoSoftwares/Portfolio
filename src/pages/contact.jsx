@@ -3,7 +3,7 @@ import Footer from "../components/footer";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { fadeUp, fadeLeft, fadeRight } from "../animations/variants";
-import logo from "../assets/logo.png";
+import Kratos from "../assets/Kratos.svg";
 
 function Contact() {
   const [success, setSuccess] = useState("");
@@ -86,14 +86,12 @@ function Contact() {
           MAIN CONTENT
       ========================== */}
 
-      <main className="bg-[#e9efe7]">
+      <main className="bg-[#f7f8f8]">
         <section className="relative mx-auto max-w-6xl overflow-hidden px-5 py-12 sm:px-6 sm:py-16">
           {/* Decorative oversized logo, blurred + faded, sitting behind the content */}
-          <img
-            src={logo}
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-32 -top-24 z-0 w-[700px] max-w-none select-none opacity-25 blur-3xl"
+          <div
+            className="mx-auto pointer-events-none absolute inset-0 z-0 bg-no-repeat bg-length:600px_auto bg-center blur-md opacity-60"
+            style={{ backgroundImage: `url(${Kratos})` }}
           />
 
           <div className="relative z-10">
@@ -103,7 +101,7 @@ function Contact() {
                 animate={{ opacity: 1, y: 0, x: "-50%" }}
                 exit={{ opacity: 0, y: -30, x: "-50%" }}
                 transition={{ duration: 0.3 }}
-                className="fixed left-1/2 top-5 z-[100] rounded-lg bg-[#163527] px-5 py-3 text-xs font-medium text-white shadow-lg"
+                className="fixed left-1/2 top-5 z-100 rounded-lg bg-[#204d2f] px-5 py-3 text-xs font-medium text-white shadow-lg"
               >
                 {success}
               </motion.div>
@@ -148,8 +146,8 @@ function Contact() {
                   variants={fadeLeft}
                   className="mt-5 max-w-md text-sm leading-6 text-gray-600"
                 >
-                  A paragraph is enough to start. If it is a fit, we will send
-                  a short read of the problem, a rough shape of the work and
+                  A paragraph is enough to start. If it is a fit, we will send a
+                  short read of the problem, a rough shape of the work and
                   problem; usually within two working days.
                 </motion.p>
 
@@ -275,7 +273,7 @@ function Contact() {
                   <motion.div variants={fieldAnimation}>
                     <label
                       htmlFor="budget"
-                      className="text-[10px] font-medium uppercase text-white/75"
+                      className="whitespace-nowrap text-[10px] font-medium uppercase text-white/75"
                     >
                       Budget Range (Optional)
                     </label>

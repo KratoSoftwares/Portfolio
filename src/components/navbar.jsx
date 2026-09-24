@@ -36,23 +36,38 @@ function Navbar() {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `text-sm font-medium tracking-widest transition-colors ${
-                  isActive
-                    ? "border-b-2 border-b-[#f2a93b]"
-                    : "text-[#163527] hover:text-[#f2a93b]"
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </div>
+        {/* Desktop */}
+<div className="hidden items-center gap-6 md:flex">
+  {links.map((link) => {
+    if (link.to === "/contact") {
+      return (
+        <NavLink
+          key={link.to}
+          to={link.to}
+          className="rounded-full bg-[#f2b632] px-5 py-2 text-sm font-medium tracking-widest text-[#163527] transition-colors hover:bg-[#f2a93b]"
+        >
+          {link.label}
+        </NavLink>
+      );
+    }
+
+    return (
+      <NavLink
+        key={link.to}
+        to={link.to}
+        className={({ isActive }) =>
+          `text-sm font-medium tracking-widest transition-colors ${
+            isActive
+              ? "border-b-2 border-b-[#f2a93b]"
+              : "text-[#163527] hover:text-[#f2a93b]"
+          }`
+        }
+      >
+        {link.label}
+      </NavLink>
+    );
+  })}
+</div>
 
         {/* Mobile button */}
         <button

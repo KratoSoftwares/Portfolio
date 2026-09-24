@@ -24,9 +24,9 @@ function Team() {
   ];
 
   const Developers = [
-    { name: "Egwi Kelvin", role: "Fullstack Developer", img: kelvin },
+    { name: "Egwi Kelvin", role: "Fullstack Developer(Web/Mobile)", img: kelvin },
     { name: "Samuel Ola", role: "Backend Developer", img: Samuel },
-    { name: "Apochi Godwin", role: "Frontend Developer", img: Godwin },
+    { name: "Apochi Godwin", role: "Frontend Developer(Web)", img: Godwin },
   ];
 
   const Publishers = [

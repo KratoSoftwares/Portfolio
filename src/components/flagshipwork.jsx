@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { fadeLeft, fadeRight } from "../animations/variants";
 import Mockup from "../assets/Mockup.png";
+import {useNavigate} from "react-router-dom"
 
 function FlagshipWork() {
+  const navigate =useNavigate();
   return (
     <section className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
@@ -53,13 +55,13 @@ function FlagshipWork() {
               <span>2026</span>
             </div>
 
-            <a
-              href="/projects"
+            <button
+              onClick={()=> navigate("/projects")}
               className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#163527] transition-all hover:gap-2.5"
             >
               View all projects
               <span>→</span>
-            </a>
+            </button>
           </motion.div>
         </div>
       </div>

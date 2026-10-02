@@ -1,24 +1,44 @@
-import Mockup from "../assets/Mockup.png"
+import { motion } from "framer-motion";
+import { fadeLeft, fadeRight } from "../animations/variants";
+import Mockup from "../assets/Mockup.png";
 
 function FlagshipWork() {
   return (
     <section className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-        <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#163527]">
+        <motion.span
+          variants={fadeLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#163527]"
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-[#f2a93b]" />
           Flagship Work
-        </span>
+        </motion.span>
 
         <div className="mt-5 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
-          <div className="aspect-4/3 w-full rounded-xl  sm:w-1/2">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="aspect-4/3 w-full rounded-xl sm:w-1/2"
+          >
             <img
               src={Mockup}
               alt="image"
               className="w-full object-cover rounded-xl"
             />
-          </div>
+          </motion.div>
 
-          <div className="sm:w-1/2">
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="sm:w-1/2"
+          >
             <h3 className="text-xl font-semibold tracking-tight text-[#163527]">
               KOVA
             </h3>
@@ -40,7 +60,7 @@ function FlagshipWork() {
               View all projects
               <span>→</span>
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

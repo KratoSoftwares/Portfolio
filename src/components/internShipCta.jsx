@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeLeft, fadeRight } from "../animations/variants";
 import internshipCTA from "../assets/internshipCTA.png";
 
 function InternshipCTA() {
@@ -6,13 +8,25 @@ function InternshipCTA() {
   return (
     <section className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-        <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#163527]">
+        <motion.span
+          variants={fadeLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#163527]"
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-[#f2a93b]" />
           Internship
-        </span>
+        </motion.span>
 
         <div className="mt-5 flex flex-col justify-between gap-8 sm:flex-row sm:items-center sm:gap-16">
-          <div className="sm:w-1/2">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="sm:w-1/2"
+          >
             <h2 className="text-2xl font-bold tracking-tight text-[#163527] sm:text-3xl">
               Collaborate with us, or train with us.
             </h2>
@@ -29,15 +43,21 @@ function InternshipCTA() {
             >
               Apply for internship
             </button>
-          </div>
+          </motion.div>
 
-          <div className="w-full sm:w-1/2">
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="w-full sm:w-1/2"
+          >
             <img
               src={internshipCTA}
               alt="Internship"
               className="h-80 w-full max-w-[370px] rounded-xl object-cover sm:ml-auto"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

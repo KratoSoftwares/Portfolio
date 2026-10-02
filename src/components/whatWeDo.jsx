@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeUp, fadeLeft, staggerContainer } from "../animations/variants";
+
 const services = [
   {
     title: "SaaS Products",
@@ -31,15 +34,28 @@ function WhatWeDo() {
   return (
     <section className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-        <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#163527]">
+        <motion.span
+          variants={fadeLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#163527]"
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-[#f2a93b]" />
           What We Do
-        </span>
+        </motion.span>
 
-        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2"
+        >
           {services.map((service) => (
-            <div
+            <motion.div
               key={service.title}
+              variants={fadeUp}
               className="rounded-xl border border-black/5 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
             >
               <h3 className="text-base font-bold text-[#163527]">
@@ -60,13 +76,12 @@ function WhatWeDo() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <p
-          href="/services"
-          onClick={()=>{navigate("/services")}}
+          onClick={() => navigate("/services")}
           className="mt-6 hover:cursor-pointer inline-flex items-center gap-1.5 text-sm font-semibold text-[#163527] transition-all hover:gap-2.5"
         >
           Explore our services

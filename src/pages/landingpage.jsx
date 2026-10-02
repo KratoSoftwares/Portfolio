@@ -7,14 +7,12 @@ import FlagshipWork from "../components/flagshipwork";
 import IntershipCTA from "../components/internShipCta";
 import Footer from "../components/footer";
 
-import { motion } from "framer-motion";
+
 
 function LandingPage() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+    <div
+     
       className="overflow-x-hidden"
     >
       <Navbar />
@@ -25,7 +23,7 @@ function LandingPage() {
       <FlagshipWork />
       <IntershipCTA />
       <Footer />
-    </motion.div>
+    </div>
   );
 }
 
